@@ -2,9 +2,9 @@
 #  Purpose:
 #    Initiates the locker phase of the game, in which players choose their classes.
 #  End Effect:
-#    Updates the game state, sets the tablist health display, assigns the teams, triggers the setup function
-#    corresponding to the chosen map, TP's the players to the lockers, shows them messages, and schedules the function
-#    for spawning the Survivors into the map.
+#    Updates the game state, assigns the teams, triggers the setup function corresponding to the chosen map, 
+#    TP's the players to the lockers, shows them messages, and schedules the function for spawning the Survivors
+#    into the map.
 #  Called by:
 #    players/start
 #  Additional notes:
@@ -14,9 +14,6 @@
 
 #UPDATE GAME STATE
 scoreboard players operation #game_state mas.counters = #PRE_GAME mas.enums
-
-#SETDISPLAY FOR HEALTH
-scoreboard objectives setdisplay list mas.health
 
 #PLAYER SETUP
 execute if score #players mas.counters <= #ONE_HUNTER_LIMIT mas.enums run team join mas.hunter @a[tag=mas.player,sort=random,limit=1]

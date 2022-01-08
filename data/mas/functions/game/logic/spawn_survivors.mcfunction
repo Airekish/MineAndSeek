@@ -12,7 +12,7 @@
 tp @a[team=mas.survivor] @e[type=minecraft:marker,tag=mas.survivor_spawn,limit=1]
 
 #DISPLAY TEXT
-title @a title ["",{"text":"SURVIVORS ESCAPED","bold":true,"italic":false,"color":"dark_blue"}]
+title @a[tag=mas.player] title ["",{"text":"SURVIVORS ESCAPED","bold":true,"italic":false,"color":"dark_blue"}]
 title @a[team=mas.survivor] subtitle ["",{"text":"Run for your lives!","bold":true,"italic":false,"color":"blue"}]
 title @a[team=mas.hunter] subtitle ["",{"text":"Prepare for the hunt!","bold":true,"italic":false,"color":"blue"}]
 

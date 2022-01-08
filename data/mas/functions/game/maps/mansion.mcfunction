@@ -2,7 +2,7 @@
 #  Purpose:
 #    Handles all of the setup needed for the Mansion map at round start.
 #  End Effect:
-#    Map is loaded via structure blocks, team spawnpoints are set, and music/effects/borders are scheduled
+#    Map is loaded via structure blocks, team spawnpoints are set, and music/effects/bounds are scheduled
 #    to kick in as the round starts.
 #  Called by:
 #    game/state/start

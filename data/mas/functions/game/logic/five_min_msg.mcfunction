@@ -9,7 +9,7 @@
 #    Using the scheduling method, this function is essential as it stretches the round duration.
 
 #DISPLAY TEXT
-title @a title ["",{"text":"5 MIN LEFT","bold":true,"italic":false,"color":"white"}]
+title @a[tag=mas.player] title ["",{"text":"5 MIN LEFT","bold":true,"italic":false,"color":"white"}]
 title @a[team=mas.hunter] subtitle ["",{"text":"Get them already!","bold":true,"italic":false,"color":"red"}]
 title @a[team=mas.survivor] subtitle ["",{"text":"Youre doing well!","bold":true,"italic":false,"color":"blue"}]
 

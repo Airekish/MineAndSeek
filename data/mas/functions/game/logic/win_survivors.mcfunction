@@ -17,8 +17,8 @@ title @a[team=mas.survivor] subtitle ["",{"text":"GGWP!","bold":true,"italic":fa
 title @a[team=mas.hunter] subtitle ["",{"text":"Better luck next time!","bold":true,"italic":false,"color":"blue"}]
 
 #WIN/LOSS SOUND EFFECTS
-execute at @a[team=mas.survivor] run playsound block.end_portal.spawn ambient @a ~ ~ ~ 1 2
-execute at @a[team=mas.hunter] run playsound block.end_portal.spawn ambient @a ~ ~ ~ 1 0.8
+playsound block.end_portal.spawn ambient @a[team=mas.survivor] ~ ~ ~ 1 2
+playsound block.end_portal.spawn ambient @a[team=mas.hunter] ~ ~ ~ 1 0.8
 
 #SHOW FIREWORKS
 execute at @a[tag=mas.player] run summon minecraft:firework_rocket ^ ^1 ^1 {Life:0,LifeTime:0,FireworksItem:{id:"minecraft:firework_rocket",Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1b,Trail:1b,Colors:[I;5592575],FadeColors:[I;5592575]}]}}}}

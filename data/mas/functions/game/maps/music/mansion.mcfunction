@@ -9,7 +9,7 @@
 #    None
 
 #PLAY MUSIC
-playsound minecraft:music_disc.pigstep music @a ~ 1000 ~ 100 0.6 1
+playsound minecraft:music_disc.pigstep music @a[tag=mas.player] ~ 1000 ~ 100 0.6 1
 
 #LOOP EVERY 230 SECONDS
 schedule function mas:game/maps/music/masion 230s
