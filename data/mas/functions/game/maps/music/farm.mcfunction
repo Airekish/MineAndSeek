@@ -9,7 +9,7 @@
 #    None
 
 #PLAY MUSIC
-playsound minecraft:music_disc.13 music @a ~ 1000 ~ 100 0.8 1
+playsound minecraft:music_disc.13 music @a[tag=mas.player] ~ 1000 ~ 100 0.8 1
 
 #LOOP EVERY 135 SECONDS
 schedule function mas:game/maps/music/farm 135s

@@ -15,4 +15,4 @@ execute if entity @s[distance=..5] run scoreboard players add @p mas.counters 1
 
 #OUTSIDE TETHER RANGE
 execute unless entity @s[distance=..5] run scoreboard players set @p mas.counters 0
-execute if score @p[predicate=mas:maps/in_range] mas.ids = @s mas.ids unless entity @s[distance=..5] run tp @s @p
+execute if score @p[predicate=mas:maps/in_bounds] mas.ids = @s mas.ids unless entity @s[distance=..5] run tp @s @p

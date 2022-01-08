@@ -26,6 +26,8 @@ team modify mas.hunter color dark_red
 team modify mas.hunter friendlyFire false
 team modify mas.hunter nametagVisibility hideForOtherTeams
 team modify mas.hunter seeFriendlyInvisibles true
+team add mas.spectator
+team modify mas.spectator color dark_gray
 
 #SCOREBOARD SETUP
 #mas.joined - used to check for player join (stat is updated on join, not leave)
@@ -43,7 +45,7 @@ scoreboard players set #init mas.bools 0
 #mas.enums - used for storing constant integers
 scoreboard objectives add mas.enums dummy
 #  settings
-scoreboard players set #ONE_HUNTER_LIMIT mas.enums 5
+scoreboard players set #ONE_HUNTER_LIMIT mas.enums 6
 #  states
 scoreboard players set #NO_GAME mas.enums 0
 scoreboard players set #PRE_GAME mas.enums 1

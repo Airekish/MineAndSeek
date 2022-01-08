@@ -15,6 +15,7 @@ function #mas:forced_end
 #REMOVE TEAMS
 team remove mas.survivor
 team remove mas.hunter
+team remove mas.spectator
 
 #REMOVE SCOREBOARDS
 scoreboard objectives remove mas.bools

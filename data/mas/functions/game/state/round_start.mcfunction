@@ -2,8 +2,8 @@
 #  Purpose:
 #    Initiates the actual round phase of the game, in which Survivors hide and Hunters seek.
 #  End Effect:
-#    Updates the game state, initializes the XP timer, sets the regen for Hunters, and begins the timers for
-#    the five minute mark and per-second round ticks.
+#    Updates the game state, sets the tablist health display, initializes the XP timer, sets the regen for 
+#    Hunters, and begins the timers for the five minute mark and per-second round ticks.
 #  Called by:
 #    game/logic/spawn_hunters
 #  Additional notes:
@@ -11,6 +11,9 @@
 
 #UPDATE GAME STATE
 scoreboard players operation #game_state mas.counters = #IN_GAME mas.enums
+
+#SETDISPLAY FOR HEALTH
+scoreboard objectives setdisplay list mas.health
 
 #XP INIT
 xp set @a[tag=mas.player] 10 levels

@@ -12,4 +12,4 @@
 
 #RANDOMIZE MARKER
 spreadplayers 23 91 0 36 false @e[type=minecraft:marker,tag=mas.lightning,limit=1]
-execute as @e[type=minecraft:marker,tag=mas.lightning,limit=1] unless predicate mas:maps/in_mansion_range run schedule function mas:game/maps/effects/lightning/mansion 1t
+execute as @e[type=minecraft:marker,tag=mas.lightning,limit=1] unless predicate mas:maps/mansion/in_bounds run schedule function mas:game/maps/effects/lightning/mansion 1t

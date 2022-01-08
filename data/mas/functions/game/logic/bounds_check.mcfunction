@@ -1,8 +1,8 @@
-# BORDER CHECK
+# BOUNDS CHECK
 #  Purpose:
 #    Ensures players stay within the map bounds.
 #  End Effect:
-#    TP's the border marker to the player if they are within bounds, TP's the player to the marker if not.
+#    TP's the bound marker to the player if they are within bounds, TP's the player to the marker if not.
 #  Called by:
 #    game/logic/marker_check
 #  Additional notes:
@@ -11,7 +11,7 @@
 #    @s represents the marker, @p represents the player.
 
 #WITHIN MAP RANGE
-execute if score @p[predicate=mas:maps/in_range] mas.ids = @s mas.ids run tp @s @p
+execute if score @p[predicate=mas:maps/in_bounds] mas.ids = @s mas.ids run tp @s @p
 
 #OUTSIDE MAP RANGE
-execute unless score @p[predicate=mas:maps/in_range] mas.ids = @s mas.ids run tp @p @s
+execute unless score @p[predicate=mas:maps/in_bounds] mas.ids = @s mas.ids run tp @p @s
