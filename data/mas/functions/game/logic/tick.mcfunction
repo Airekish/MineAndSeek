@@ -12,3 +12,6 @@
 
 #CLEAR XP POINTS
 xp set @a[tag=mas.player] 0 points
+
+#DEATH CHECK
+execute as @a[team=mas.survivor,scores={mas.death=1..}] at @s run function mas:game/logic/death
