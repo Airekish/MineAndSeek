@@ -3,8 +3,8 @@
 #    Initiates the locker phase of the game, in which players choose their classes.
 #  End Effect:
 #    Updates the game state, assigns the teams, triggers the setup function corresponding to the chosen map, 
-#    TP's the players to the lockers, shows them messages, and schedules the function for spawning the Survivors
-#    into the map.
+#    TP's the players to the lockers, shows them messages, inits the pregame music and xp timers, then schedules 
+#    the function for spawning the Survivors into the map.
 #  Called by:
 #    players/start
 #  Additional notes:
@@ -32,6 +32,16 @@ title @a[team=mas.survivor] subtitle ["",{"text":"You have 30s to pick a class",
 tp @a[team=mas.hunter] 1 53 34 -90 0
 title @a[team=mas.hunter] title ["",{"text":"Hunter","bold":true,"italic":false,"color":"dark_red"}]
 title @a[team=mas.hunter] subtitle ["",{"text":"You have 45s to pick a class","bold":true,"italic":false,"color":"red"}]
+
+#PLAY LOCKER MUSIC
+stopsound @a[tag=mas.player]
+playsound music_disc.stal master @a[tag=mas.player] ~ 1000 ~ 100 0.8
+
+#LOCKER TIMER INIT
+xp set @a[team=mas.survivor] 30 levels
+xp set @a[team=mas.hunter] 45 levels
+schedule function mas:game/logic/xp_timer 1s
+title @a[tag=mas.player] actionbar "SECONDS TILL SPAWN:"
 
 #SCHEDULE SURVIVOR SPAWN
 schedule function mas:game/logic/spawn_survivors 30s

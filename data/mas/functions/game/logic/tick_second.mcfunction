@@ -12,9 +12,6 @@
 #    cleared in round end, even after moving it to the top (maybe the round end code takes more than
 #    1 sec?).
 
-#DEATH CHECK
-execute as @a[scores={mas.death=1..}] run function mas:game/logic/death
-
 #MARKER CHECK
 execute at @a[tag=mas.player,tag=!mas.spectator] as @e[type=minecraft:marker,tag=mas.entity,scores={mas.ids=0..}] if score @p mas.ids = @s mas.ids run function mas:game/logic/marker_check
 
