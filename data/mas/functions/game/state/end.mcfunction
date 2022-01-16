@@ -2,7 +2,8 @@
 #  Purpose:
 #    Handles the cleanup process at the end of the round.
 #  End Effect:
-#    Updates the game state, forces all players to leave, clears game schedules, and resets the scoreboard display.
+#    Updates the game state, resets the id counter, forces all players to leave, clears game schedules, and resets the 
+#    scoreboard display.
 #  Called by:
 #    game/state/round_end
 #  Additional notes:
@@ -15,6 +16,9 @@
 
 #UPDATE GAME STATE
 scoreboard players operation #game_state mas.counters = #NO_GAME mas.enums
+
+#RESET ID COUNT
+scoreboard players set #curr_id mas.counters 0
 
 #FORCE PLAYER LEAVE
 execute as @a[tag=mas.player] run function mas:game/state/leave

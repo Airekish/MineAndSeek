@@ -11,6 +11,8 @@
 #    After map setup, its important to tp the markers to the survivor spawn, so that they aren't killed by
 #    the bounds checks. The choice of survivor spawn is not arbitrary, as suvivors who escape the map during
 #    pregame will get TP'd back to the survivor spawn this way.
+#    If we check bounds during pregame as well, then killing entities here will be unnecessary. TODO (low):
+#    Return to this.
 
 #MAP-SPECIFIC SETUP
 execute if score #map mas.ids = #MANSION mas.enums run function mas:game/maps/mansion
@@ -19,3 +21,6 @@ execute if score #map mas.ids = #FARM mas.enums run function mas:game/maps/farm
 #TP MARKERS INTO BOUNDS
 tp @e[type=minecraft:marker,tag=mas.idle_marker] @e[type=minecraft:marker,tag=mas.survivor_spawn,limit=1]
 tp @e[type=minecraft:marker,tag=mas.bounds_marker] @e[type=minecraft:marker,tag=mas.survivor_spawn,limit=1]
+
+#REMOVE ENTITIES
+kill @e[type=!minecraft:player,tag=!mas.entity,predicate=mas:maps/in_bounds]

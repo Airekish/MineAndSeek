@@ -2,16 +2,16 @@
 #  Purpose:
 #    Executes round-specific functionality that MUST be ran per tick.
 #  End Effect:
-#    Kills all foreign entities within the map bounds.
+#    Kills all foreign entities within the map bounds and checks for player deaths.
 #  Called by:
 #    scripts/main
 #  Additional notes:
-#    Clearing XP points is better than killing @e[...] tickwise, so we do that instead. If item
-#    pickup ends up being an issue, replace the XP clearing with the entity killing line from
-#    tick_second. TODO (low): Return to this.
+#    Need to check death tickwise for death effects and spectator tp to work properly.
+#    We check for !mas.hunter instead of mas.survivor so that people who join mid-game are 
+#    turned into spectators.
 
-#CLEAR XP POINTS
-xp set @a[tag=mas.player] 0 points
+#BOUND EFFECTS
+function mas:game/logic/bound_effects
 
 #DEATH CHECK
-execute as @a[team=mas.survivor,scores={mas.death=1..}] at @s run function mas:game/logic/death
+execute as @a[team=!mas.hunter,scores={mas.death=1..}] at @s run function mas:game/logic/death

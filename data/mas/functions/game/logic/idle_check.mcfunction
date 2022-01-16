@@ -8,10 +8,12 @@
 #    game/logic/marker_check
 #  Additional notes:
 #    The tether range is currently hardcoded as 5 as distance can't be compared to a score (our enum).
+#    We need to check for mas.spectator tag even though spectators don't have idle markers, because abilities can also tag
+#    players as mas.spectator (e.g. polymorph).
 #    @s represents the marker, @p represents the player.
 
 #WITHIN TETHER RANGE
-execute if entity @s[distance=..5] run scoreboard players add @p mas.counters 1
+execute if entity @s[distance=..5] if score @p[tag=!mas.spectator] mas.ids = @s mas.ids run scoreboard players add @p mas.counters 1
 
 #OUTSIDE TETHER RANGE
 execute unless entity @s[distance=..5] run scoreboard players set @p mas.counters 0

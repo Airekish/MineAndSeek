@@ -1,9 +1,9 @@
 # MAIN
 #  Purpose:
-#    Executes every tick. Used for running the round-specific tick function and player counting.
+#    Executes every tick, regardless of game state.
 #  End Effect:
-#    Installs the datapack if it hasn't been installed yet, then resets the game state using the end function
-#    and the player state using the dc_check function.
+#    Runs bound effects for the pregame, executes the tickwise functions for in-game commands, clears the health
+#    display for non-players, and keeps track of the player count.
 #  Called by:
 #    minecraft
 #  Additional notes:
@@ -12,6 +12,8 @@
 #    The health display clearing and player counting could probably be done every second instead.
 #    TODO (medium): Return to this.
 
+#PRE_GAME
+execute if score #game_state mas.counters = #PRE_GAME mas.enums run function mas:game/logic/bound_effects
 
 #IN_GAME
 execute if score #game_state mas.counters = #IN_GAME mas.enums run function mas:game/logic/tick

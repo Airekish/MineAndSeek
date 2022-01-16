@@ -2,7 +2,7 @@
 #  Purpose:
 #    Executes round-specific functionality that can be run per second instead of per tick.
 #  End Effect:
-#    Checks for deaths, idling, bounds, team player counts (for win conditions), and forces gamemodes.
+#    Checks markers, idling, team player counts (for win conditions), and forces gamemodes.
 #  Called by:
 #    game/state/round_start
 #  Additional notes:
@@ -13,12 +13,7 @@
 #    1 sec?).
 
 #MARKER CHECK
-execute at @a[tag=mas.player,tag=!mas.spectator] as @e[type=minecraft:marker,tag=mas.entity,scores={mas.ids=0..}] if score @p mas.ids = @s mas.ids run function mas:game/logic/marker_check
-
-#BOUND EFFECTS
-tp @a[tag=!mas.player,predicate=mas:maps/in_bounds] 1.5 63 35.5 180 0
-kill @e[type=!minecraft:player,tag=!mas.entity,predicate=mas:maps/in_bounds]
-kill @e[type=!minecraft:player,tag=mas.entity,predicate=!mas:maps/in_bounds]
+execute at @a[tag=mas.player] as @e[type=minecraft:marker,tag=mas.entity,scores={mas.ids=0..}] if score @p mas.ids = @s mas.ids run function mas:game/logic/marker_check
 
 #IDLING EFFECTS
 title @a[team=mas.survivor,scores={mas.counters=25}] title ["",{"text":"Warning","bold":false,"italic":false,"color":"white"}]
