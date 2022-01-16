@@ -12,5 +12,5 @@
 stopsound @a[tag=mas.player]
 playsound minecraft:music_disc.13 master @a[tag=mas.player] ~ 1000 ~ 100 0.8 1
 
-#LOOP EVERY 135 SECONDS
-schedule function mas:game/maps/music/farm 135s
+#LOOP EVERY 214 SECONDS
+schedule function mas:game/maps/music/farm 214s
